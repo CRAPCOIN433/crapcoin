@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRAPCOIN - Buy CRAP or stay poor forever</title>
+    <meta name="description" content="CRAPCOIN - A meme token with GTA vibes on Pump.fun">
+    <meta name="keywords" content="crapcoin, meme token, gta, crypto, pump.fun, solana">
+    
+    <meta property="og:title" content="CRAPCOIN - GTA-styled Meme Token">
+    <meta property="og:description" content="No roadmap. No taxes. No mercy. Just CRAP.">
+    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="loading-content">
+            <div class="gta-mission-start">MISSION START</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mission-passed" class="hidden">
+        <div class="mission-content">
+            <h2>MISSION PASSED!</h2>
+            <p>Respect +</p>
+        </div>
+    </div>
+
+    <!-- Preload sounds -->
+    <audio id="clickSound" preload="auto">
+        <source src="./sounds/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="missionSound" preload="auto">
+        <source src="./sounds/mission-passed.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hoverSound" preload="auto">
+        <source src="./sounds/hover.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <div class="language-switch">
+            <button onclick="switchLanguage('en')" class="active">EN</button>
+            <button onclick="switchLanguage('ru')">RU</button>
+        </div>
+        <button class="sound-toggle" onclick="toggleSound()">🔊</button>
+    </header>
+
+    <section class="hero">
+        <div id="particles-js"></div>
+        <div class="logo">CRAPCOIN</div>
+        <h1 class="slogan">
+            <span lang="en">Buy CRAP or stay poor forever.</span>
+            <span lang="ru">Купи CRAP или навсегда останься нищим.</span>
+        </h1>
+        <div class="cta-buttons">
+            <a href="https://pumpdex.app" target="_blank" rel="noopener" class="btn gta-button">BUY ON PUMP.FUN</a>
+            <a href="https://solscan.io/token/YOUR_TOKEN_ADDRESS" target="_blank" rel="noopener" class="btn gta-button">VIEW ON SOLSCAN</a>
+            <a href="https://t.me/YOUR_TELEGRAM_GROUP" target="_blank" rel="noopener" class="btn gta-button">JOIN TELEGRAM</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2 class="gta-heading">About</h2>
+        <p class="mission-text">
+            <span lang="en">No roadmap. No taxes. No mercy. Just CRAP.</span>
+            <span lang="ru">Без дорожной карты. Без налогов. Только CRAP.</span>
+        </p>
+    </section>
+
+    <section class="roadmap">
+        <h2 class="gta-heading">Missions</h2>
+        <div class="mission-list">
+            <div class="mission mission-completed">
+                <span class="mission-status">✅ DONE:</span>
+                <span lang="en">Launch on Pump.fun</span>
+                <span lang="ru">Запуск на Pump.fun</span>
+            </div>
+            <div class="mission">
+                <span class="mission-status">🔜 SOON:</span>
+                <div class="mission-item">100+ degenerates unite</div>
+                <div class="mission-item">Viral mission on Twitter</div>
+                <div class="mission-item">GTA x CRAP merch</div>
+                <div class="mission-item">Game mod collab?</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <h2 class="gta-heading">Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement" data-id="first-buy">
+                <div class="achievement-icon">🎮</div>
+                <div class="achievement-title">First CRAP</div>
+                <div class="achievement-desc">Buy your first CRAP</div>
+            </div>
+            <div class="achievement" data-id="diamond-hands">
+                <div class="achievement-icon">💎</div>
+                <div class="achievement-title">Diamond Hands</div>
+                <div class="achievement-desc">HODL for 24 hours</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section">
+        <h2 class="gta-heading">Earn CRAP</h2>
+        <div class="game-container">
+            <canvas id="gameCanvas" width="600" height="300"></canvas>
+            <div class="game-controls">
+                <p>SPACE or TAP to jump</p>
+                <button class="gta-button" onclick="startGame()">START MISSION</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2 class="gta-heading">FAQ</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>❓ What is CRAPCOIN?</h3>
+                <p lang="en">A token with no purpose, just pure degeneracy.</p>
+                <p lang="ru">Токен без цели. Только дичь.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ Is this a scam?</h3>
+                <p lang="en">That's between you and your wallet.</p>
+                <p lang="ru">Это между тобой и твоим кошельком.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ When Lambo?</h3>
+                <p lang="en">As soon as you buy more CRAP.</p>
+                <p lang="ru">Как только наберешь больше CRAP.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://pump.fun" class="social-link">Pump.fun</a>
+            <a href="https://solscan.io" class="social-link">Solscan</a>
+            <a href="https://t.me" class="social-link">Telegram</a>
+            <a href="https://twitter.com" class="social-link">Twitter</a>
+        </div>
+        <div class="disclaimer">
+            <p lang="en">CRAPCOIN is a joke. A meme. Don't take it seriously. DYOR.</p>
+            <p lang="ru">CRAPCOIN — это шутка. Мем. Не воспринимай всерьез. DYOR.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">
+        <span class="arrow">⬆</span>
+        <span class="text">RESPAWN</span>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
